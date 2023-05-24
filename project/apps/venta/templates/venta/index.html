@@ -1,5 +1,12 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>Venta</h1>
-{% endblock content %}
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.tipo_vehiculo }} - {{ producto.marca }} - {{ producto.modelo }} - {{ producto.anio }}</li>
+        {% empty %}
+            <li>No se encontraron productos</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
