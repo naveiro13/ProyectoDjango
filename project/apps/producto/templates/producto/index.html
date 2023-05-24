@@ -2,4 +2,20 @@
 
 {% block content %}
     <h1>Producto</h1>
+    <form method="POST" action="{% url 'producto:agregar_producto' %}">
+        {% csrf_token %}
+        <label for="tipo_vehiculo">Tipo de vehículo:</label>
+        <input type="text" name="tipo_vehiculo" id="tipo_vehiculo">
+        
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" id="marca">
+        
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" id="modelo">
+        
+        <label for="anio">Año:</label>
+        <input type="number" name="anio" id="anio">
+        
+        <button type="submit">Agregar producto</button>
+      </form>
 {% endblock content %}
