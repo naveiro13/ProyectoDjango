@@ -4,8 +4,8 @@
   <h1>Listado de Productos</h1>
   <ul>
     {% for producto in productos %}
-      <li>{{ producto.tipo_vehiculo }} - {{ producto.marca }} - {{ producto.modelo }} - {{producto.anio}} - {{producto.detalle}} - <img src="{{ producto.imagen }}" alt="Imagen del producto"></li>
+      <li>{{ producto.tipo_vehiculo }} - {{ producto.marca }} - {{ producto.modelo }} - {{producto.anio}} - {{producto.detalle}} - <img src="{{ producto.imagen }}" alt="Imagen del producto"width="200" height="auto" style="display: block; margin: 0 auto;"></li>
     {% endfor %}
   </ul>
 {% endblock %}
-#<img src="{{ producto.imagen.url }}" alt="Imagen del producto">
+

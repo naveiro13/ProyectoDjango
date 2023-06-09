@@ -13,7 +13,9 @@ def agregar_producto(request):
         detalle = request.POST.get("detalle")
         imagen = request.FILES.get("imagen")
 
-        producto = Producto(tipo_vehiculo=tipo_vehiculo, marca=marca, modelo=modelo, anio=anio, detalle=detalle)
+        producto = Producto(
+            tipo_vehiculo=tipo_vehiculo, marca=marca, modelo=modelo, anio=anio, detalle=detalle, imagen=imagen
+        )
 
         if imagen:
             fs = FileSystemStorage()

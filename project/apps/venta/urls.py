@@ -3,7 +3,7 @@ from django.urls import include, path
 # from producto import mostrar_productos
 from django.urls import path, include
 from . import views
-from producto.views import agregar_producto
+from producto.views import mostrar_productos
 
 app_name = "venta"
 
