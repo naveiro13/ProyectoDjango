@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+  <h1>Listado de Productos</h1>
+  <ul>
+    {% for producto in productos %}
+      <li>{{ producto.tipo_vehiculo }} - {{ producto.marca }} - {{ producto.modelo }} - {{producto.anio}} - {{producto.detalle}} - <img src="{{ producto.imagen }}" alt="Imagen del producto"></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+#<img src="{{ producto.imagen.url }}" alt="Imagen del producto">

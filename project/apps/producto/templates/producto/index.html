@@ -1,8 +1,9 @@
 {% extends 'home/base.html' %}
 
+
 {% block content %}
     <h1>Producto</h1>
-    <form method="POST" action="{% url 'producto:agregar_producto' %}">
+    <form method="POST" action="{% url 'producto:agregar_producto' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="tipo_vehiculo">Tipo de vehículo:</label>
         <input type="text" name="tipo_vehiculo" id="tipo_vehiculo">
@@ -16,6 +17,12 @@
         <label for="anio">Año:</label>
         <input type="number" name="anio" id="anio">
         
+        <label for="detalle">Detalle:</label>
+        <textarea name="detalle" id="detalle"></textarea>
+        
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" id="imagen">
+        
         <button type="submit">Agregar producto</button>
-      </form>
+    </form>
 {% endblock content %}
