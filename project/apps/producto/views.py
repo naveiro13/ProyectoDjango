@@ -1,9 +1,10 @@
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import redirect, render
-
+from django.contrib.auth.decorators import login_required
 from .models import Producto
 
 
+@login_required(login_url="home:login")
 def agregar_producto(request):
     if request.method == "POST":
         tipo_vehiculo = request.POST.get("tipo_vehiculo")

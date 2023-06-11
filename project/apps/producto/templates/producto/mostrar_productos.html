@@ -1,11 +1,35 @@
 {% extends 'home/base.html' %}
 {% load static %}
-{% block content %}
-  <h1>Listado de Productos</h1>
-  <ul>
-    {% for producto in productos %}
-      <li>{{ producto.tipo_vehiculo }} - {{ producto.marca }} - {{ producto.modelo }} - {{producto.anio}} - {{producto.detalle}} - <img src="{{ producto.imagen }}" alt="Imagen del producto"width="200" height="auto" style="display: block; margin: 0 auto;"></li>
-    {% endfor %}
-  </ul>
-{% endblock %}
 
+{% block content %}
+    <h1>Lista de Productos</h1>
+    <div class="row">
+        {% for producto in productos %}
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ producto.imagen }}" alt="Imagen del producto" width="100%" height="auto">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <strong style="font-size: 18px;">Tipo de vehículo:</strong> {{ producto.tipo_vehiculo }} <br>
+                                    <strong style="font-size: 18px;">Marca:</strong> {{ producto.marca }} <br>
+                                    <strong style="font-size: 18px;">Modelo:</strong> {{ producto.modelo }}<br>
+                                                              
+                                    <strong style="font-size: 18px;">Año:</strong> {{ producto.anio }} <br>
+                                   </h5> 
+                                <p class="card-text">   
+                                    <strong>Detalle:</strong> <span class="badge bg-info text-dark">{{ producto.detalle }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No se encontraron productos.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
