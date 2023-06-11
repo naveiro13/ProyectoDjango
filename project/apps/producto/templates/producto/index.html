@@ -3,6 +3,7 @@
 {% block content %}
     <div class="container my-5">
         <h1 class="mb-4">Producto</h1>
+
         <form method="POST" action="{% url 'producto:agregar_producto' %}" enctype="multipart/form-data">
             {% csrf_token %}
             

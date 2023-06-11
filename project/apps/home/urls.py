@@ -20,6 +20,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("quienes_somos/", views.quienes_somos, name="quienes_somos"),
     path("login/", auth_views.LoginView.as_view(template_name="home/login.html"), name="login"),
+    path("contacto/", views.contacto, name="contacto"),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

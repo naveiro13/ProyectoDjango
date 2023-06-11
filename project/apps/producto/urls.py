@@ -6,7 +6,8 @@
 #   path("", views.index, name="index"),
 # ]
 from django.urls import path
-from . import views
+
+# from . import views
 from django.urls import path
 from producto import views
 from django.conf import settings
