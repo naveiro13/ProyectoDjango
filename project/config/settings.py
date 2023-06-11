@@ -140,11 +140,13 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 # STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-# STATICFILES_DIRS = [
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/") esta funciono siempre
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # esta actualmente funciona pero siguen sin aparecer las fotos
+
+# STATICFILES_DIRS = []
 #    os.path.join(BASE_DIR, "static"),
 # ]
-# STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATICFILES_DIRS = [BASE_DIR, "static"]
 
 
 # Default primary key field type
