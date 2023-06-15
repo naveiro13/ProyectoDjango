@@ -1,8 +1,58 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
 {% block content %}
-    <div class="copyright">
-        <h1 class="text-center">Copyright 2023</h1>
-        <p class="text-center">© 2023 Todos los derechos reservados. Nave Automotores es una marca registrada. Queda estrictamente prohibida la reproducción total o parcial de cualquier contenido, diseño o elemento gráfico sin el consentimiento expreso por escrito de Nave Automotores. Cualquier infracción será perseguida legalmente. Nave Automotores se reserva el derecho de modificar, actualizar o eliminar cualquier información o servicio sin previo aviso. Las imágenes y marcas registradas de terceros utilizadas en este sitio web son propiedad de sus respectivos propietarios. Toda la información proporcionada en este sitio web es únicamente con fines informativos y no constituye asesoramiento legal, financiero o técnico.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Copyright 2023</h1>
+                <p id="initial-content">
+                    © 2023 Todos los derechos reservados. Nave Automotores es una marca registrada. Queda estrictamente prohibida la reproducción total o parcial de cualquier contenido, diseño o elemento gráfico sin el consentimiento expreso por escrito de Nave Automotores. Cualquier infracción será perseguida legalmente. Nave Automotores se reserva el derecho de modificar, actualizar o eliminar cualquier información o servicio sin previo aviso. Las imágenes y marcas registradas de terceros utilizadas en este sitio web son propiedad de sus respectivos propietarios. Toda la información proporcionada en este sitio web es únicamente con fines informativos y no constituye asesoramiento legal, financiero o técnico.
+                </p>
+        
+                <div id="new-content" style="display: none;">
+                    <h2>Les voy a contar un poco de mi y de mi proyecto...</h2>
+                    <p>
+                        Mi nombre es Martin Naveiro, soy oriundo de Liniers, CABA. Pero hace 5 años me fui de la gran ciudad para comenzar una nueva vida fuera del ruido, me vine a un pueblo de Santa Fe de 5000 habitantes, llamado San Gregorio.
+                    </p>
+                    <p>
+                        Logré un cambio rotundo desde lo personal, pasando por lo social, hasta llegar a lo laboral. Lo cual cambie la relación de dependencia por ser un emprendedor, actualmente un comerciante.
+                    </p>
+                    <p>
+                        Creo que es en vano ponerse a comentar lo útil que resulta la tecnología después de la pandemia y lo sorprendente de todo lo nuevo que va apareciendo día a día y lo tenemos con un simple "click" en nuestro bolsillo.
+                    </p>
+                    <p>
+                        Es así que me decidí por tratar de entender un poco de qué había detrás de ese "click" y me metí en esto, lejos de considerarme programador me sorprende como en 3 o 4 meses de su curso podamos al menos poder hacer esta entrega. Quería felicitarlos por lo que han logrado en mí, estoy muy entusiasmado por seguir capacitándome.
+                    </p>
+                    <p>
+                        Respecto al blog que creé tiene mucho que ver con lo anteriormente contado, me pasó que desde CABA todo producto de MercadoLibre por nombrar alguna página, el vendedor está cerca y hoy por hoy querer cambiar el auto me resulta un problema. Las concesionarias son chicas, los vendedores particulares son de boca en boca y los pueblos están a 30 km uno del otro. Por lo resulta más engorroso poder conseguir varias opciones para elegir, cosa que podemos solucionar con un simple blog, de hecho, se podría tener una página con las concesionarias de la zona y que cada uno actualice sus productos.
+                    </p>
+                </div>
+                <a href="javascript:void(0);" onclick="toggleContent()" class="btn btn-primary">Acerca de mí</a>
+                <div id="image-container" style="display: none;">
+                    <img src="{% static 'media/martin.jpg' %}" alt="nave">
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        var newContent = document.getElementById("new-content");
+        var imageContainer = document.getElementById("image-container");
+        var link = document.getElementsByTagName("a")[0];
+        var isContentVisible = false;
+
+        function toggleContent() {
+            if (!isContentVisible) {
+                newContent.style.display = "block";
+                imageContainer.style.display = "block";
+                link.innerHTML = "Ocultar contenido";
+                isContentVisible = true;
+            } else {
+                newContent.style.display = "none";
+                imageContainer.style.display = "none";
+                link.innerHTML = "Seguir leyendo";
+                isContentVisible = false;
+            }
+        }
+    </script>
 {% endblock content %}
