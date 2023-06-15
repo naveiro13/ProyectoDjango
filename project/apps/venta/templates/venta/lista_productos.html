@@ -4,8 +4,10 @@
 {% block content %}
     <h1>Lista de Productos</h1>
     <form method="GET" action="{% url 'venta:buscar_productos' %}">
-        <input type="text" name="q" placeholder="Buscar productos">
-        <button type="submit">Buscar</button>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
     </form>
     <div class="row">
         {% for producto in productos %}
